@@ -46,14 +46,18 @@ An environment to bootstrap building a nixos configuration for daily development
     - `nixos-rebuild dry-run --flake .#YOUR_HOST_NAME`
 12. Assuming that was successful  - type `YES` when prompted CAPITAL `YES`
 13. `sudo nixos-rebuild switch --flake .#YOUR_HOST_NAME`
+14. Run the post script to finalize the installation
+    - `./post-build.sh`
+15. Follow the instructions to add your ssh key to github
+16. reboot the laptop
 
-# Generate the keys and commit
+# Final cleanup and commit
 
-1. Run the post script to finalize the installation
-   - `./post-build.sh`
-2. Follow the instructions to add your ssh key to github
+1. Open the terminal again and change back to your config.
+   - `cd ~/.dotfiles`
+2. Add your keys to the ssh-agent
 3. `eval "$(ssh-agent -s)"`
-4. `ssh-add ~/.ssh//github-key`
+4. `ssh-add ~/.ssh/github-key`
 5. `git remote remove origin`
 6. In your nixos-bootstrap repo select `CODE` and choose the ssh option
 7. `git remote add origin git@URL_OF_REPO`
