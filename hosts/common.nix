@@ -150,6 +150,8 @@
       ssh = {
         startAgent = true;
         extraConfig = ''
+          IdentityFile ~/.ssh/builder-key
+          IdentityFile ~/.ssh/github-key
           host ghaf-netvm
                user ghaf
                IdentityFile ~/.ssh/builder-key
