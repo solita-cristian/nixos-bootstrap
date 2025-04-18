@@ -1,5 +1,7 @@
 # nixos-bootstrap
-An environment to bootstrap building a nixos configuration for daily development
+An environment to bootstrap building a nixos configuration for daily development of Ghaf and Nixos based projects.
+
+This is a bootstrap setup and it is intended only as a starter kit. You will have to adjust this configuration as you become more familiar with nixos to best suit your needs. 
 
 # Pre-requisites
 
@@ -68,3 +70,21 @@ An environment to bootstrap building a nixos configuration for daily development
 12. Create PRs to upload your builder-key.pub to the development repos.
 
 # Reboot to finalize the installation
+
+1. Find all TODO items and ensure that you follow the instructions to complete the setup.
+
+
+There are some helper scripts that will enable you to use to keep this configuration upto date.
+
+## Update package versions to the latest
+
+`update-host`
+
+This will update the pinned version of the inputs in the flake.nix. In general it will fetch the latest versions of all the inputs and by doing this will update the `flake.lock` file. This will mean that you have access to all the latest packages but it does not apply them to your system.
+
+`rebuild-host`
+
+This script will ensure that all the changes and updated packages are applied to your system. Every time that you add a package, change the configuration or run `update-host` you should run `rebuild-host` for those changes to take effect.
+
+After you modify the configuration be sure to commit the changes to git and push the changes to your fork so that you have a reference in the case of disaster recovery.
+

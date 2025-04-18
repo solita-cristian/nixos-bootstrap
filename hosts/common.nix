@@ -28,7 +28,7 @@
           extraSpecialArgs = {
             inherit inputs self;
           };
-          #TODO export this from a toplevel login-users module
+
           users.FIRST_NAME = {
             imports = [ (import ../home/home-client.nix) ] ++ [ inputs.nix-index-database.hmModules.nix-index ];
           };
@@ -114,7 +114,6 @@
             "kvm"
           ];
           mandatoryFeatures = [ ];
-          #TODO Fix this
           sshUser = "FIRST_NAME";
           sshKey = "/home/FIRST_NAME/.ssh/builder-key";
         }
@@ -130,7 +129,6 @@
             "kvm"
           ];
           mandatoryFeatures = [ ];
-          #TODO Fix this
           sshUser = "FIRST_NAME";
           sshKey = "/home/FIRST_NAME/.ssh/builder-key";
         }
@@ -160,12 +158,12 @@
                user ghaf
                IdentityFile ~/.ssh/builder-key
                hostname 192.168.100.2
-               proxyjump ghaf-net
+               proxyjump ghaf-netvm
           host ghaf-ui
                user ghaf
                IdentityFile ~/.ssh/builder-key
                hostname 192.168.100.3
-               proxyjump ghaf-net
+               proxyjump ghaf-netvm
           host hetzarm
                user FIRST_NAME
                HostName 65.21.20.242

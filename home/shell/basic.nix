@@ -33,7 +33,7 @@
       };
     };
 
-    htop.enable = true; # TODO enable the correct layout
+    htop.enable = true;
 
     starship.enable = true;
 

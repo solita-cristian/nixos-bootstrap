@@ -70,7 +70,7 @@ perform_replace() {
         count=$((count + 1))
       fi
     fi
-  done < <(find "$PROJECT_DIR" -type f -not -path "*/\.git/*"  -not -path "*/\packages/*" 2>/dev/null || true)
+  done < <(find "$PROJECT_DIR" -type f -not -path "*/\.git/*" -not -path "*/\packages/*" 2>/dev/null || true)
 
   printf "Completed replacement of %s with %s in %d files\n" "$search" "$replace" "$count"
 }

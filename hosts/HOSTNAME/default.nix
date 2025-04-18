@@ -10,6 +10,12 @@
   #Set the baseline with common.nix
   imports = [
     ./hardware-configuration.nix
+    #TODO: check nixod-hardware for your device name if it has additional support
+    # modules are defined in the top level flake
+    # https://github.com/NixOS/nixos-hardware/blob/master/flake.nix
+    # and you can see which one is used for your device
+    # e.g. https://github.com/NixOS/nixos-hardware/tree/master/lenovo/thinkpad/x1/10th-gen
+    # TODO: swap lenovo-thinkpad-x1-10th-gen with your device or comment out this line
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-10th-gen
     self.nixosModules.common-client
   ];
@@ -46,7 +52,6 @@
 
   networking = {
 
-    #TODO Replace this with the name of the nixosConfiguration so it can be common
     # Define your hostname
     hostName = lib.mkDefault "HOSTNAME";
 

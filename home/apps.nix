@@ -7,7 +7,7 @@
     zoom-us
     google-chrome
 
-    #TODO needs a fix that is in unstable pipeline
+    # Development
     #minicom
     usbutils
 
