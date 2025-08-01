@@ -22,7 +22,8 @@
             pkgs.nixVersions.latest
             pkgs.ssh-to-age
             config.treefmt.build.wrapper
-          ] ++ lib.attrValues config.treefmt.build.programs;
+          ]
+          ++ lib.attrValues config.treefmt.build.programs;
         };
 
         commands = [

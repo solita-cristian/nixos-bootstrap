@@ -146,7 +146,8 @@
     ## Local config for known hosts
     programs = {
       ssh = {
-        startAgent = true;
+        # use the gcr-ssh-agent
+        #startAgent = true;
         extraConfig = ''
           IdentityFile ~/.ssh/builder-key
           IdentityFile ~/.ssh/github-key
