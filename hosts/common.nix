@@ -30,7 +30,10 @@
           };
 
           users.FIRST_NAME = {
-            imports = [ (import ../home/home-client.nix) ] ++ [ inputs.nix-index-database.hmModules.nix-index ];
+            imports = [
+              (import ../home/home-client.nix)
+            ]
+            ++ [ inputs.nix-index-database.homeModules.nix-index ];
           };
         };
       }
